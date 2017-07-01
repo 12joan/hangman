@@ -9,8 +9,5 @@ namespace Table {
       Width = width;
       Spacing = spacing;
     }
-
-    public static void Main() {
-    }
   }
 }
