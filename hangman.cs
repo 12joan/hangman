@@ -3,7 +3,7 @@ using Table;
 
 public class Hangman {
   public static void Main(string[] args) {
-    Table.Table t = new Table.Table();
+    Table.Table t = new Table.Table(2, 3);
     Console.WriteLine("Hello, World!");
     Console.WriteLine("You entered the following {0} command line arguments:",
          args.Length );

@@ -5,7 +5,12 @@ namespace Table {
     public int Width;
     public int Spacing;
 
-    public static void Main(string[] args) {
+    public Table(int width, int spacing) {
+      Width = width;
+      Spacing = spacing;
+    }
+
+    public static void Main() {
     }
   }
 }
