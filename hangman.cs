@@ -1,4 +1,5 @@
 using System;
+using Table;
 
 public class Hangman {
   public static void Main(string[] args) {
