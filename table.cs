@@ -19,7 +19,7 @@ namespace Hangman {
     }
 
     public string[] Lines() {
-      List<string> rowTexts = new List<string>();
+      var rowTexts = new List<string>();
       foreach (var row in Rows) {
         rowTexts.Add(row.Text);
       }
