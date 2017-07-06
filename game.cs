@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace Hangman {
   public class Game {
@@ -12,7 +13,15 @@ namespace Hangman {
     }
 
     public string ShownWord() {
-      return Word;
+      StringBuilder obscuredWord = new StringBuilder();
+      foreach (char letter in Word) {
+        obscuredWord.Append(ShownLetterFor(letter));
+      }
+      return obscuredWord.ToString();
+    }
+
+    private char ShownLetterFor(char originalLetter) {
+      return '_';
     }
 
     private bool LetterWasGuessed(char letter) {
@@ -20,7 +29,7 @@ namespace Hangman {
     }
 
     private bool LetterIsCorrect(char letter) {
-      return Word.Contains(letter);
+      return Word.Contains(letter.ToString());
     }
   }
 }
