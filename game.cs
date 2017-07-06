@@ -21,7 +21,11 @@ namespace Hangman {
     }
 
     private char ShownLetterFor(char originalLetter) {
-      return '_';
+      if (LetterWasGuessed(originalLetter) || originalLetter == ' ') {
+        return originalLetter;
+      } else {
+        return '_';
+      } 
     }
 
     private bool LetterWasGuessed(char letter) {
