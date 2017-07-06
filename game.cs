@@ -18,5 +18,9 @@ namespace Hangman {
     private bool LetterWasGuessed(char letter) {
       return GuessedLetters.Contains(letter);
     }
+
+    private bool LetterIsCorrect(char letter) {
+      return Word.Contains(letter);
+    }
   }
 }
