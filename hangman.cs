@@ -12,8 +12,12 @@ namespace Hangman {
       // var output = game.ShownWord();
       // Console.WriteLine(output);
 
-      Table table = new Table(2, 3);
-      string output = table.Draw();
+      var table = new Table(
+          Console.WindowWidth,  // width
+          2                     // spacing
+      );
+
+      var output = table.Draw();
 
       Console.WriteLine(output);
     }
