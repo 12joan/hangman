@@ -14,5 +14,9 @@ namespace Hangman {
     public string ShownWord() {
       return Word;
     }
+
+    private bool LetterWasGuessed(char letter) {
+      return GuessedLetters.Contains(letter);
+    }
   }
 }
