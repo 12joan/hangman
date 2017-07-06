@@ -13,7 +13,7 @@ namespace Hangman {
     }
 
     public string ShownWord() {
-      StringBuilder obscuredWord = new StringBuilder();
+      var obscuredWord = new StringBuilder();
       foreach (char letter in Word) {
         obscuredWord.Append(ShownLetterFor(letter));
       }
