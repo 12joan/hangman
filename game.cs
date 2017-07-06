@@ -19,6 +19,11 @@ namespace Hangman {
       }
       return obscuredWord.ToString();
     }
+    
+    public bool GuessLetter(char letter) {
+      GuessedLetters.Add(letter);
+      return LetterIsCorrect(letter);
+    }
 
     private char ShownLetterFor(char originalLetter) {
       if (LetterWasGuessed(originalLetter) || originalLetter == ' ') {
