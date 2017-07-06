@@ -3,8 +3,11 @@ using System;
 namespace Hangman {
   public class Hangman {
     public static void Main(string[] args) {
+      char key = Console.ReadKey(true).KeyChar;
+
       var game = new Game("HANG THE MAN");
-      game.GuessLetter('H');
+      bool wasCorrect = game.GuessLetter(key);
+      Console.WriteLine(wasCorrect.ToString());
 
       var output = game.ShownWord();
       Console.WriteLine(output);
