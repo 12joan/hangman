@@ -13,8 +13,8 @@ namespace Hangman {
       // Console.WriteLine(output);
 
       var table = new Table(
-          Console.WindowWidth,  // width
-          2                     // spacing
+        Console.WindowWidth,  // width
+        2                     // spacing
       );
 
       var output = table.Draw();
