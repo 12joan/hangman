@@ -2,7 +2,10 @@ using System;
 
 namespace Hangman {
   public class Row {
-    public Row() {
+    public string Text;
+
+    public Row(string text) {
+      Text = text;
     }
   }
 }

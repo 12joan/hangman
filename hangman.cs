@@ -13,8 +13,8 @@ namespace Hangman {
       // Console.WriteLine(output);
 
       Row[] rows = {
-        new Row(),
-        new Row()
+        new Row("Hello"),
+        new Row("World")
       };
 
       var table = new Table(
