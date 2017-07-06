@@ -9,5 +9,9 @@ namespace Hangman {
       Width = width;
       Spacing = spacing;
     }
+
+    public string Draw() {
+      return "Hello World";
+    }
   }
 }
