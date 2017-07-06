@@ -10,5 +10,9 @@ namespace Hangman {
       Word = word;
       GuessedLetters = new List<char>();
     }
+
+    public string ShownWord() {
+      return Word;
+    }
   }
 }
