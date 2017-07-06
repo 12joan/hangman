@@ -1,6 +1,6 @@
 using System;
 
-namespace Table {
+namespace Hangman {
   public class Table {
     public int Width;
     public int Spacing;
