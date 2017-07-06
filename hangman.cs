@@ -3,8 +3,8 @@ using System;
 namespace Hangman {
   public class Hangman {
     public static void Main(string[] args) {
-      var game = new Game("hang the man");
-      game.GuessLetter('h');
+      var game = new Game("HANG THE MAN");
+      game.GuessLetter('H');
 
       var output = game.ShownWord();
       Console.WriteLine(output);
