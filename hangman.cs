@@ -12,9 +12,14 @@ namespace Hangman {
       // var output = game.ShownWord();
       // Console.WriteLine(output);
 
+      Cell[] cells = {
+        new Cell(),
+        new Cell() 
+      };
+
       Row[] rows = {
-        new Row("This is a"),
-        new Row("Row")
+        new Row(cells),
+        new Row(cells)
       };
 
       var table = new Table(
