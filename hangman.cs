@@ -24,7 +24,7 @@ namespace Hangman {
 
       var table = new Table(
         Console.WindowWidth,  // width
-        1,                    // spacing
+        2,                    // spacing
         rows
       );
 
