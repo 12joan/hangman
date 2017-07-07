@@ -2,14 +2,15 @@ using System;
 
 namespace Hangman {
   public class Row {
-    public string Text;
+    public Cell[] Cells;
 
-    public Row(string text) {
-      Text = text;
+    public Row(Cell[] cells) {
+      Cells = cells;
     }
 
     public string Draw(int width) {
-      return new String(' ', width - Text.Length) + Text;
+      // return new String(' ', width - Text.Length) + Text;
+      return "I have many cells!";
     }
   }
 }
