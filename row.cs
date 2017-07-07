@@ -13,7 +13,7 @@ namespace Hangman {
       return String.Join("\n", Lines());
     }
 
-    public string[] Lines() {
+    private string[] Lines() {
       return new string[] {
         "Line 1",
         "Line 2"
