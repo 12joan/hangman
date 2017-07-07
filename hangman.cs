@@ -14,7 +14,7 @@ namespace Hangman {
 
       Cell[] cells = {
         new Cell("This is a"),
-        new Cell("Row") 
+        new Cell("Row", Cell.RightAlign) 
       };
 
       Row[] rows = {
