@@ -32,7 +32,7 @@ namespace Hangman {
         line.Add(part);
         usedSpace += part.Length;
       }
-      return line;
+      return String.Join("", line);
     }
 
     private int MaxCellDepth() {
