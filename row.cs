@@ -4,6 +4,7 @@ using System.Collections.Generic;
 namespace Hangman {
   public class Row {
     public Cell[] Cells;
+    private int Width;
 
     public Row(Cell[] cells) {
       Cells = cells;
@@ -11,6 +12,7 @@ namespace Hangman {
 
     public string Draw(int width) {
       // return new String(' ', width - Text.Length) + Text;
+      Width = width;
       return String.Join("\n", Lines());
     }
 
@@ -28,11 +30,15 @@ namespace Hangman {
       int usedSpace = 0;
       foreach (var cell in Cells) {
         var part = cell.LineAtIndex(index);
-
-        line.Add(part);
+        var spacing = SpacingFor(cell);
+        line.Add(spacing + part);
         usedSpace += part.Length;
       }
       return String.Join("", line);
+    }
+
+    private string SpacingFor(Cell cell) {
+      return new String(' ', 4);
     }
 
     private int MaxCellDepth() {
