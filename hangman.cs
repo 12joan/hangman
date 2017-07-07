@@ -13,8 +13,8 @@ namespace Hangman {
       // Console.WriteLine(output);
 
       Cell[] cells = {
-        new Cell(),
-        new Cell() 
+        new Cell("This is a"),
+        new Cell("Row") 
       };
 
       Row[] rows = {
