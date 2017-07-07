@@ -9,7 +9,7 @@ namespace Hangman {
     }
 
     public string Draw(int width) {
-      return Text;
+      return new String(' ', width - Text.Length) + Text;
     }
   }
 }

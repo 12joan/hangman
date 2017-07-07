@@ -13,13 +13,13 @@ namespace Hangman {
       // Console.WriteLine(output);
 
       Row[] rows = {
-        new Row("Hello"),
-        new Row("World")
+        new Row("This is a"),
+        new Row("Row")
       };
 
       var table = new Table(
         Console.WindowWidth,  // width
-        2,                    // spacing
+        1,                    // spacing
         rows
       );
 
