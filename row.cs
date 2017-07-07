@@ -10,7 +10,14 @@ namespace Hangman {
 
     public string Draw(int width) {
       // return new String(' ', width - Text.Length) + Text;
-      return "I have many cells!";
+      return String.Join("\n", Lines());
+    }
+
+    public string[] Lines() {
+      return new string[] {
+        "Line 1",
+        "Line 2"
+      };
     }
   }
 }
