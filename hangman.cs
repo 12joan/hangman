@@ -23,8 +23,8 @@ namespace Hangman {
       };
 
       var table = new Table(
-        Console.WindowWidth,  // width
-        2,                    // spacing
+        Math.Min(80, Console.WindowWidth),
+        2,
         rows
       );
 
