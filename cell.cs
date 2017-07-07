@@ -18,5 +18,9 @@ namespace Hangman {
       Text = text;
       Align = align;
     }
+
+    public string[] Lines() {
+      return Text.Split('\n');
+    }
   }
 }
