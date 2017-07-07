@@ -19,6 +19,27 @@ namespace Hangman {
       Align = align;
     }
 
+    public int LeftMargin(int width) {
+      switch (Align) {
+        case LeftAlign:
+          return 0;
+        case CentreAlign:
+          return (width - Length()) / 2;
+        case RightAlign:
+          return width - Length();
+        default:
+          return -1; // should never reach
+      }
+    }
+
+    public int Length() {
+      int max = 0;
+      foreach (var line in Lines()) {
+        max = Math.Max(max, line.Length);
+      }
+      return max;
+    }
+
     public string[] Lines() {
       return Text.Split('\n');
     }
