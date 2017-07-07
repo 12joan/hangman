@@ -15,10 +15,10 @@ namespace Hangman {
     }
 
     public string Draw() {
-      return String.Join("\n", Lines());
+      return String.Join("\n", RowStrings());
     }
 
-    public string[] Lines() {
+    public string[] RowStrings() {
       var rowTexts = new List<string>();
       foreach (var row in Rows) {
         rowTexts.Add(row.Text);
