@@ -25,10 +25,14 @@ namespace Hangman {
 
     private string LineAtIndex(int index) {
       var line = new List<string>();
+      int usedSpace = 0;
       foreach (var cell in Cells) {
         var part = cell.LineAtIndex(index);
+
         line.Add(part);
+        usedSpace += part.Length;
       }
+      return line;
     }
 
     private int MaxCellDepth() {
