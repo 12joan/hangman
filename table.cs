@@ -19,7 +19,7 @@ namespace Hangman {
     }
 
     private string Separator() {
-      return new String('\n', Spacing);
+      return new String('\n', Spacing + 1);
     }
 
     private string[] RowStrings() {
