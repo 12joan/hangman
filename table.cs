@@ -25,9 +25,13 @@ namespace Hangman {
     private string[] RowStrings() {
       var rowTexts = new List<string>();
       foreach (var row in Rows) {
-        rowTexts.Add(row.Text);
+        rowTexts.Add(DrawRow(row));
       }
       return rowTexts.ToArray();
+    }
+
+    private string DrawRow(Row row) {
+      return row.Draw(Width);
     }
   }
 }
