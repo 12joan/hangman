@@ -7,5 +7,9 @@ namespace Hangman {
     public Row(string text) {
       Text = text;
     }
+
+    public string Draw(int width) {
+      return Text;
+    }
   }
 }
