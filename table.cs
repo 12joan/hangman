@@ -15,7 +15,11 @@ namespace Hangman {
     }
 
     public string Draw() {
-      return String.Join("\n", RowStrings());
+      return String.Join(Separator(), RowStrings());
+    }
+
+    private string Separator() {
+      return new String('\n', Spacing);
     }
 
     private string[] RowStrings() {
