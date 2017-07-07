@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Hangman {
   public class Row {
@@ -14,10 +15,17 @@ namespace Hangman {
     }
 
     private string[] Lines() {
-      return new string[] {
-        "Line 1",
-        $"Line {MaxCellDepth()}"
-      };
+      var lines = new List<string>();
+      List<string> line;
+      for (var i = 0; i < MaxCellDepth(); i++) {
+        line = new List<string>();
+        foreach (var cell in Cells) {
+          var part = cell.LineAtIndex(i);
+          line.Add(part);
+        }
+        lines.Add(String.Join("", line));
+      }
+      return lines.ToArray();
     }
 
     private int MaxCellDepth() {

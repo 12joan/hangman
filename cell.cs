@@ -23,6 +23,14 @@ namespace Hangman {
       return Text.Split('\n');
     }
 
+    public string LineAtIndex(int index, string notFound="") {
+      if (index < Lines().Length) {
+        return Lines()[index];
+      } else {
+        return notFound;
+      }
+    }
+
     public int Depth() {
       return Lines().Length;
     }
