@@ -22,5 +22,9 @@ namespace Hangman {
     public string[] Lines() {
       return Text.Split('\n');
     }
+
+    public int Depth() {
+      return Lines().Length;
+    }
   }
 }
