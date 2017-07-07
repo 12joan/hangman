@@ -13,7 +13,7 @@ namespace Hangman {
       // Console.WriteLine(output);
 
       Cell[] cells = {
-        new Cell("This is a"),
+        new Cell("This\nis\na"),
         new Cell("Row", Cell.RightAlign) 
       };
 

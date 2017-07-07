@@ -16,8 +16,16 @@ namespace Hangman {
     private string[] Lines() {
       return new string[] {
         "Line 1",
-        "Line 2"
+        $"Line {MaxCellDepth()}"
       };
+    }
+
+    private int MaxCellDepth() {
+      int max = 0;
+      foreach (var cell in Cells) {
+        max = Math.Max(max, cell.Depth());
+      }
+      return max;
     }
   }
 }
