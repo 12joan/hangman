@@ -16,16 +16,19 @@ namespace Hangman {
 
     private string[] Lines() {
       var lines = new List<string>();
-      List<string> line;
       for (var i = 0; i < MaxCellDepth(); i++) {
-        line = new List<string>();
-        foreach (var cell in Cells) {
-          var part = cell.LineAtIndex(i);
-          line.Add(part);
-        }
+        var line = LineAtIndex(i);
         lines.Add(String.Join("", line));
       }
       return lines.ToArray();
+    }
+
+    private string LineAtIndex(int index) {
+      var line = new List<string>();
+      foreach (var cell in Cells) {
+        var part = cell.LineAtIndex(index);
+        line.Add(part);
+      }
     }
 
     private int MaxCellDepth() {
