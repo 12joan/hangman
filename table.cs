@@ -18,7 +18,7 @@ namespace Hangman {
       return String.Join("\n", RowStrings());
     }
 
-    public string[] RowStrings() {
+    private string[] RowStrings() {
       var rowTexts = new List<string>();
       foreach (var row in Rows) {
         rowTexts.Add(row.Text);
