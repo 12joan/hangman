@@ -30,15 +30,16 @@ namespace Hangman {
       int usedSpace = 0;
       foreach (var cell in Cells) {
         var part = cell.LineAtIndex(index);
-        var spacing = SpacingFor(cell);
+        var spacing = SpacingFor(cell, usedSpace);
         line.Add(spacing + part);
         usedSpace += part.Length;
       }
       return String.Join("", line);
     }
 
-    private string SpacingFor(Cell cell) {
-      return new String(' ', 4);
+    private string SpacingFor(Cell cell, int usedSpace) {
+      int spaces = cell.LeftMargin(Width) - usedSpace;
+      return new String(' ', spaces);
     }
 
     private int MaxCellDepth() {
