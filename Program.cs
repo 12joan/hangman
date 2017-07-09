@@ -4,14 +4,14 @@ using System.IO;
 namespace Hangman {
   public class Hangman {
     public static void Main(string[] args) {
-      // char key = Console.ReadKey(true).KeyChar;
+      char key = Console.ReadKey(true).KeyChar;
 
-      // var game = new Game("HANG THE MAN");
-      // bool wasCorrect = game.GuessLetter(key);
-      // Console.WriteLine(wasCorrect.ToString());
+      var game = new Game("HANG THE MAN");
+      bool wasCorrect = game.GuessLetter(key);
+      Console.WriteLine(wasCorrect.ToString());
 
-      // var output = game.ShownWord();
-      // Console.WriteLine(output);
+      var output = game.ShownWord();
+      Console.WriteLine(output);
 
       string titleText = File.ReadAllText("title.txt");
 
@@ -45,9 +45,9 @@ namespace Hangman {
         rows
       );
 
-      var output = table.Draw();
+      var tableOutput = table.Draw();
 
-      Console.WriteLine(output);
+      Console.WriteLine(tableOutput);
     }
   }
 }
