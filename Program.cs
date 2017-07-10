@@ -8,10 +8,6 @@ namespace Hangman {
 
       var game = new Game("HANG THE MAN");
       bool wasCorrect = game.GuessLetter(key);
-      Console.WriteLine(wasCorrect.ToString());
-
-      var output = game.ShownWord();
-      Console.WriteLine(output);
 
       string titleText = File.ReadAllText("title.txt");
 
@@ -19,8 +15,9 @@ namespace Hangman {
         new Cell(titleText, Cell.CentreAlign)
       };
 
+      string shownWord = game.ShownWord();
       Cell[] word = {
-        new Cell("_E__O _O___", Cell.CentreAlign)
+        new Cell(shownWord, Cell.CentreAlign)
       };
 
       Cell[] stats = {
