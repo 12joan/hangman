@@ -8,41 +8,37 @@ namespace Hangman {
 
       while (true) {
         string titleText = File.ReadAllText("title.txt");
-
-        Cell[] title = {
-          new Cell(titleText, Cell.CentreAlign)
-        };
-
         string shownWord = game.ShownWord();
-        Cell[] word = {
-          new Cell(shownWord, Cell.CentreAlign)
+
+        object[] titleCell = {titleText, Cell.CentreAlign};
+        object[] titleRow = {titleCell}; 
+
+        object[] wordCell = {shownWord, Cell.CentreAlign};
+        object[] wordRow = {wordCell};
+
+        object[] lettersCell = {"Incorrect letters:\n A B I U", Cell.LeftAlign};
+        object[] livesCell   = {"Lives remaining:\n 11/15",     Cell.RightAlign};
+        object[] statsRow = {lettersCell, livesCell};
+
+        object[] statusCell = {"Press any letter to guess!", Cell.CentreAlign};
+        object[] statusRow = {statusCell};
+
+        object[] tableConfig = {
+          titleRow,
+          wordRow,
+          statsRow,
+          statusRow
         };
 
-        Cell[] stats = {
-          new Cell("Incorrect letters:\n A B I U"),
-          new Cell("Lives remaining:\n 11/15", Cell.RightAlign)
-        };
+        // var table = new Table(                 // Broken
+        //   Math.Min(81, Console.WindowWidth),
+        //   2,
+        //   rows
+        // );
 
-        Cell[] status = {
-          new Cell("Press any letter to guess!", Cell.CentreAlign)
-        };
+        // var tableOutput = table.Draw();
 
-        Row[] rows = {
-          new Row(title),
-          new Row(word),
-          new Row(stats),
-          new Row(status)
-        };
-
-        var table = new Table(
-          Math.Min(81, Console.WindowWidth),
-          2,
-          rows
-        );
-
-        var tableOutput = table.Draw();
-
-        Console.WriteLine(tableOutput);
+        // Console.WriteLine(tableOutput);
 
         char key = Console.ReadKey(true).KeyChar;
         bool wasCorrect = game.GuessLetter(Char.ToUpper(key));
