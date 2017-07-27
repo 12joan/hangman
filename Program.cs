@@ -37,6 +37,8 @@ namespace Hangman {
         //   rows
         // );
 
+        var table = TableFactory.Build(tableConfig);
+
         // var tableOutput = table.Draw();
 
         // Console.WriteLine(tableOutput);
