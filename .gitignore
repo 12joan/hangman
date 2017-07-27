@@ -1,4 +1,4 @@
-*.swp
+*.sw*
 *.exe
 *.dll
 .DS_Store
