@@ -6,12 +6,13 @@ namespace Hangman {
     public static void Main(string[] args) {
       var game = new Game("HANG THE MAN");
 
-      while (true) {
-        string titleText = File.ReadAllText("title.txt");
-        string shownWord = game.ShownWord();
+      string titleText = File.ReadAllText("title.txt");
 
-        object[] titleCell = {titleText, Cell.CentreAlign};
-        object[] titleRow = {titleCell}; 
+      object[] titleCell = {titleText, Cell.CentreAlign};
+      object[] titleRow = {titleCell}; 
+
+      while (true) {
+        string shownWord = game.ShownWord();
 
         object[] wordCell = {shownWord, Cell.CentreAlign};
         object[] wordRow = {wordCell};
