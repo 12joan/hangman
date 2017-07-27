@@ -31,17 +31,9 @@ namespace Hangman {
           statusRow
         };
 
-        // var table = new Table(                 // Broken
-        //   Math.Min(81, Console.WindowWidth),
-        //   2,
-        //   rows
-        // );
-
         var table = TableFactory.Build(tableConfig);
-
-        // var tableOutput = table.Draw();
-
-        // Console.WriteLine(tableOutput);
+        var tableOutput = table.Draw();
+        Console.WriteLine(tableOutput);
 
         Console.WriteLine("Still Alive");
 
