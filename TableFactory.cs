@@ -4,12 +4,12 @@ using System.Collections.Generic;
 
 namespace Hangman {
   public class TableFactory {
-    public static Table Build(object[] config) {
+    public static Table Build(object[] config, int width, int spacing) {
       var rows = new List<Row>();
       foreach (object[] rowConfig in config) {
         rows.Add(BuildRow(rowConfig));
       }
-      return new Table(1, 2, rows.ToArray());
+      return new Table(width, spacing, rows.ToArray());
     }
 
     public static Row BuildRow(object[] rowConfig) {

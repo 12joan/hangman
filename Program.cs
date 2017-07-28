@@ -6,6 +6,9 @@ namespace Hangman {
     public static void Main(string[] args) {
       var game = new Game("HANG THE MAN");
 
+      var width = 50;
+      var spacing = 2;
+
       string titleText = File.ReadAllText("title.txt");
 
       object[] titleCell = {titleText, Cell.CentreAlign};
@@ -31,7 +34,7 @@ namespace Hangman {
           statusRow
         };
 
-        var table = TableFactory.Build(tableConfig);
+        var table = TableFactory.Build(tableConfig, width: width, spacing: spacing);
         var tableOutput = table.Draw();
         Console.WriteLine(tableOutput);
 
