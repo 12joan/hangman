@@ -6,10 +6,12 @@ namespace Hangman {
   public class Game {
     public string Word;
     private List<char> GuessedLetters;
+    private string StatusMessage;
 
     public Game(string word) {
       Word = word;
       GuessedLetters = new List<char>();
+      StatusMessage = "Press any letter to guess!";
     }
 
     public string ShownWord() {
@@ -21,7 +23,7 @@ namespace Hangman {
     }
 
     public string Status() {
-      return "Press any letter to guess!";
+      return StatusMessage;
     }
     
     public bool GuessLetter(char letter) {
