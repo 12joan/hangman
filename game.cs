@@ -19,6 +19,10 @@ namespace Hangman {
       }
       return obscuredWord.ToString();
     }
+
+    public string Status() {
+      return "Press any letter to guess!";
+    }
     
     public bool GuessLetter(char letter) {
       GuessedLetters.Add(letter);

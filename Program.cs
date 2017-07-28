@@ -26,6 +26,7 @@ namespace Hangman {
 
       while (true) {
         string shownWord = game.ShownWord();
+        string statusMessage = game.Status();
 
         object[] wordCell = {shownWord, Cell.CentreAlign};
         object[] wordRow = {wordCell};
@@ -34,7 +35,7 @@ namespace Hangman {
         object[] livesCell   = {"Lives remaining:\n 11/15",     Cell.RightAlign};
         object[] statsRow = {lettersCell, livesCell};
 
-        object[] statusCell = {"Press any letter to guess!", Cell.CentreAlign};
+        object[] statusCell = {statusMessage, Cell.CentreAlign};
         object[] statusRow = {statusCell};
 
         object[] tableConfig = {
