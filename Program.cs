@@ -7,9 +7,19 @@ namespace Hangman {
       var game = new Game("HANG THE MAN");
 
       var width = Math.Min(81, Console.WindowWidth);
-      var spacing = 2;
 
-      string titleText = File.ReadAllText("title.txt");
+      string titleText;
+      int spacing;
+      if (width >= 81) {
+        titleText = File.ReadAllText("title_long.txt");
+        spacing = 2;
+      } else if (width >= 48) {
+        titleText = File.ReadAllText("title_short.txt");
+        spacing = 1;
+      } else {
+        titleText = "Hangman";
+        spacing = 1;
+      }
 
       object[] titleCell = {titleText, Cell.CentreAlign};
       object[] titleRow = {titleCell}; 
