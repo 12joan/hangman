@@ -35,8 +35,6 @@ namespace Hangman {
         var tableOutput = table.Draw();
         Console.WriteLine(tableOutput);
 
-        Console.WriteLine("Still Alive");
-
         char key = Console.ReadKey(true).KeyChar;
         bool wasCorrect = game.GuessLetter(Char.ToUpper(key));
         Console.Clear();

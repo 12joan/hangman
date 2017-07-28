@@ -13,8 +13,17 @@ namespace Hangman {
     }
 
     public static Row BuildRow(object[] rowConfig) {
-      Cell[] cells = {};
-      return new Row(cells);
+      var cells = new List<Cell>();
+      foreach (object[] cellConfig in rowConfig) {
+        cells.Add(BuildCell(cellConfig));
+      }
+      return new Row(cells.ToArray());
+    }
+
+    public static Cell BuildCell(object[] cellConfig) {
+      var text      = (string) cellConfig[0];
+      var alignment = (int)    cellConfig[1];
+      return new Cell(text, alignment);
     }
   }
 }

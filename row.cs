@@ -39,7 +39,7 @@ namespace Hangman {
 
     private string SpacingFor(Cell cell, int usedSpace) {
       int spaces = cell.LeftMargin(Width) - usedSpace;
-      return new String(' ', spaces);
+      return new String(' ', Math.Max(0, spaces));
     }
 
     private int MaxCellDepth() {
