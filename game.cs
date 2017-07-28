@@ -23,7 +23,15 @@ namespace Hangman {
     }
 
     public char[] IncorrectLetters() {
-      return new[] {'A', 'B', 'C'};
+      var incorrectLetters = new List<char>();
+
+      foreach (var letter in GuessedLetters) {
+        if (!LetterIsCorrect(letter)) {
+          incorrectLetters.Add(letter);
+        }
+      }
+
+      return incorrectLetters.ToArray();
     }
 
     public string Status() {
@@ -31,7 +39,10 @@ namespace Hangman {
     }
     
     public bool GuessLetter(char letter) {
-      GuessedLetters.Add(letter);
+      if (!GuessedLetters.Contains(letter)) {
+        GuessedLetters.Add(letter);
+      }
+      
       bool correct = LetterIsCorrect(letter);
       
       if (correct) {
