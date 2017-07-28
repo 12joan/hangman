@@ -28,7 +28,17 @@ namespace Hangman {
     
     public bool GuessLetter(char letter) {
       GuessedLetters.Add(letter);
-      return LetterIsCorrect(letter);
+      bool correct = LetterIsCorrect(letter);
+      
+      if (correct) {
+        StatusMessage = "Correct! Guess again!";
+      } else {
+        StatusMessage = "Incorrect! Try again!";
+      }
+
+      // CheckGameOver();
+
+      return correct;
     }
 
     private char ShownLetterFor(char originalLetter) {
