@@ -22,6 +22,10 @@ namespace Hangman {
       return obscuredWord.ToString();
     }
 
+    public char[] IncorrectLetters() {
+      return new[] {'A', 'B', 'C'};
+    }
+
     public string Status() {
       return StatusMessage;
     }
