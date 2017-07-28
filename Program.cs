@@ -6,42 +6,41 @@ namespace Hangman {
     public static void Main(string[] args) {
       var game = new Game("HANG THE MAN");
 
+      var width = Math.Min(81, Console.WindowWidth);
+      var spacing = 2;
+
+      string titleText = File.ReadAllText("title.txt");
+
+      object[] titleCell = {titleText, Cell.CentreAlign};
+      object[] titleRow = {titleCell}; 
+
       while (true) {
-        string titleText = File.ReadAllText("title.txt");
-
-        Cell[] title = {
-          new Cell(titleText, Cell.CentreAlign)
-        };
-
         string shownWord = game.ShownWord();
-        Cell[] word = {
-          new Cell(shownWord, Cell.CentreAlign)
+
+        object[] wordCell = {shownWord, Cell.CentreAlign};
+        object[] wordRow = {wordCell};
+
+        object[] lettersCell = {"Incorrect letters:\n A B I U", Cell.LeftAlign};
+        object[] livesCell   = {"Lives remaining:\n 11/15",     Cell.RightAlign};
+        object[] statsRow = {lettersCell, livesCell};
+
+        object[] statusCell = {"Press any letter to guess!", Cell.CentreAlign};
+        object[] statusRow = {statusCell};
+
+        object[] tableConfig = {
+          titleRow,
+          wordRow,
+          statsRow,
+          statusRow
         };
 
-        Cell[] stats = {
-          new Cell("Incorrect letters:\n A B I U"),
-          new Cell("Lives remaining:\n 11/15", Cell.RightAlign)
-        };
-
-        Cell[] status = {
-          new Cell("Press any letter to guess!", Cell.CentreAlign)
-        };
-
-        Row[] rows = {
-          new Row(title),
-          new Row(word),
-          new Row(stats),
-          new Row(status)
-        };
-
-        var table = new Table(
-          Math.Min(81, Console.WindowWidth),
-          2,
-          rows
+        var table = TableFactory.Build(
+          tableConfig, 
+          width: width, 
+          spacing: spacing
         );
 
         var tableOutput = table.Draw();
-
         Console.WriteLine(tableOutput);
 
         char key = Console.ReadKey(true).KeyChar;
