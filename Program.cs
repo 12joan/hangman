@@ -26,16 +26,18 @@ namespace Hangman {
 
       while (true) {
         string shownWord = game.ShownWord();
-        string statusMessage = game.Status();
+        string statusMessage = game.Status;
         char[] rawLetters = game.IncorrectLetters();
+        int livesRemaining = game.LivesRemaining();
+        int totalLives = game.TotalLives;
 
         string lettersBlock = String.Format("Incorrect letters:\n {0}",
           String.Join(" ", rawLetters)
         );
 
-        string livesBlock = String.Format("Lives remaining:\n {0}/{0}",
-          11,
-          15
+        string livesBlock = String.Format("Lives remaining:\n {0}/{1}",
+          livesRemaining,
+          totalLives
         );
 
         object[] wordCell = {shownWord, Cell.CentreAlign};

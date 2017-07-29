@@ -5,13 +5,20 @@ using System.Text;
 namespace Hangman {
   public class Game {
     public string Word;
-    private List<char> GuessedLetters;
-    private string StatusMessage;
+
+    public List<char> GuessedLetters;
+    public string Status;
+    public int TotalLives;
 
     public Game(string word) {
       Word = word;
       GuessedLetters = new List<char>();
-      StatusMessage = "Press any letter to guess!";
+      Status = "Press any letter to guess!";
+      TotalLives = 15;
+    }
+
+    public int LivesRemaining() {
+      return TotalLives - IncorrectLetters().Length;
     }
 
     public string ShownWord() {
@@ -34,10 +41,6 @@ namespace Hangman {
       return incorrectLetters.ToArray();
     }
 
-    public string Status() {
-      return StatusMessage;
-    }
-    
     public bool GuessLetter(char letter) {
       if (!GuessedLetters.Contains(letter)) {
         GuessedLetters.Add(letter);
@@ -46,9 +49,9 @@ namespace Hangman {
       bool correct = LetterIsCorrect(letter);
       
       if (correct) {
-        StatusMessage = "Correct! Guess again!";
+        Status = "Correct! Guess again!";
       } else {
-        StatusMessage = "Incorrect! Try again!";
+        Status = "Incorrect! Try again!";
       }
 
       // CheckGameOver();
