@@ -29,13 +29,20 @@ namespace Hangman {
         string statusMessage = game.Status();
         char[] rawLetters = game.IncorrectLetters();
 
-        string lettersBlock = "Incorrect letters:\n " + String.Join(" ", rawLetters);
+        string lettersBlock = String.Format("Incorrect letters:\n {0}",
+          String.Join(" ", rawLetters)
+        );
+
+        string livesBlock = String.Format("Lives remaining:\n {0}/{0}",
+          11,
+          15
+        );
 
         object[] wordCell = {shownWord, Cell.CentreAlign};
         object[] wordRow = {wordCell};
 
         object[] lettersCell = {lettersBlock, Cell.LeftAlign};
-        object[] livesCell   = {"Lives remaining:\n 11/15", Cell.RightAlign};
+        object[] livesCell   = {livesBlock, Cell.RightAlign};
         object[] statsRow = {lettersCell, livesCell};
 
         object[] statusCell = {statusMessage, Cell.CentreAlign};
