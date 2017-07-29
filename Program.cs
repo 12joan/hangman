@@ -67,7 +67,7 @@ namespace Hangman {
         Console.WriteLine(tableOutput);
 
         char key = Console.ReadKey(true).KeyChar;
-        bool wasCorrect = game.GuessLetter(Char.ToUpper(key));
+        game.GuessLetter(Char.ToUpper(key));
         Console.Clear();
       }
     }

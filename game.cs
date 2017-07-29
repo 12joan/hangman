@@ -4,17 +4,17 @@ using System.Text;
 
 namespace Hangman {
   public class Game {
-    public string Word;
+    private char[] ForbiddenLetters = {' ', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
+    public int TotalLives = 15;
 
+    public string Word;
     public List<char> GuessedLetters;
     public string Status;
-    public int TotalLives;
 
     public Game(string word) {
       Word = word;
       GuessedLetters = new List<char>();
       Status = "Press any letter to guess!";
-      TotalLives = 15;
     }
 
     public int LivesRemaining() {
@@ -41,11 +41,20 @@ namespace Hangman {
       return incorrectLetters.ToArray();
     }
 
-    public bool GuessLetter(char letter) {
-      if (!GuessedLetters.Contains(letter)) {
-        GuessedLetters.Add(letter);
+    private bool LetterIsGuessable(char letter) {
+      return (
+        !LetterWasGuessed(letter) &&                    // Letter has not been guessed already
+        Array.IndexOf(ForbiddenLetters, letter) == -1   // Letter is not forbidden
+      );
+    }
+
+    public void GuessLetter(char letter) {
+      if (!LetterIsGuessable(letter)) {
+        Status = "";
+        return;
       }
-      
+
+      GuessedLetters.Add(letter);
       bool correct = LetterIsCorrect(letter);
       
       if (correct) {
@@ -56,7 +65,7 @@ namespace Hangman {
 
       // CheckGameOver();
 
-      return correct;
+      return;
     }
 
     private char ShownLetterFor(char originalLetter) {
