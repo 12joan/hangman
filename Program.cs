@@ -4,8 +4,8 @@ using System.IO;
 namespace Hangman {
   public class Hangman {
     public static void Main(string[] args) {
-      var game = new Game("HANG THE MAN");
-
+      var word = "HANG THE MAN";
+      var game = new Game(word);
       var width = Math.Min(81, Console.WindowWidth);
 
       string titleText;
@@ -24,7 +24,7 @@ namespace Hangman {
       object[] titleCell = {titleText, Cell.CentreAlign};
       object[] titleRow = {titleCell}; 
 
-      while (true) {
+      while (game.IsPlaying()) {
         string shownWord = game.ShownWord();
         string statusMessage = game.Status;
         char[] rawLetters = game.IncorrectLetters();
@@ -70,6 +70,9 @@ namespace Hangman {
         game.GuessLetter(Char.ToUpper(key));
         Console.Clear();
       }
+      // After the game
+      Console.WriteLine(game.Status);
+      Console.WriteLine("The word was \"{0}\".", word);
     }
   }
 }

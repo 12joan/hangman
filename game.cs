@@ -7,6 +7,10 @@ namespace Hangman {
     private char[] ForbiddenLetters = {' ', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
     public int TotalLives = 15;
 
+    public const int Playing  = 0;
+    public const int Ended    = 1;
+    public int GameState;
+
     public string Word;
     public List<char> GuessedLetters;
     public string Status;
@@ -15,6 +19,11 @@ namespace Hangman {
       Word = word;
       GuessedLetters = new List<char>();
       Status = "Press any letter to guess!";
+      GameState = Playing;
+    }
+
+    public bool IsPlaying() {
+      return GameState == Playing;
     }
 
     public int LivesRemaining() {
@@ -63,9 +72,21 @@ namespace Hangman {
         Status = "Incorrect! Try again!";
       }
 
-      // CheckGameOver();
+      CheckGameOver();
 
       return;
+    }
+
+    private void CheckGameOver() {
+      if (LivesRemaining() == 0) {
+        Status = "Game Over!";
+        GameState = Ended;
+      }
+
+      if (ShownWord() == Word) {
+        Status = "You Win!";
+        GameState = Ended;
+      }
     }
 
     private char ShownLetterFor(char originalLetter) {
