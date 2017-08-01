@@ -52,7 +52,7 @@ namespace Hangman {
       }
     }
 
-    public int Depth() {
+    public int Height() {
       return Lines().Length;
     }
   }

@@ -18,7 +18,7 @@ namespace Hangman {
 
     private string[] Lines() {
       var lines = new List<string>();
-      for (var i = 0; i < MaxCellDepth(); i++) {
+      for (var i = 0; i < MaxCellHeight(); i++) {
         var line = LineAtIndex(i);
         lines.Add(String.Join("", line));
       }
@@ -42,10 +42,10 @@ namespace Hangman {
       return new String(' ', Math.Max(0, spaces));
     }
 
-    private int MaxCellDepth() {
+    private int MaxCellHeight() {
       int max = 0;
       foreach (var cell in Cells) {
-        max = Math.Max(max, cell.Depth());
+        max = Math.Max(max, cell.Height());
       }
       return max;
     }
