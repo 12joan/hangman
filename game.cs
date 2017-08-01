@@ -73,8 +73,6 @@ namespace Hangman {
       }
 
       CheckGameOver();
-
-      return;
     }
 
     private void CheckGameOver() {
