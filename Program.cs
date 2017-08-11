@@ -4,7 +4,8 @@ using System.IO;
 namespace Hangman {
   public class Hangman {
     public static void Main(string[] args) {
-      var word = "HANG THE MAN";
+      var wordGenerator = new FixedWord();
+      var word = wordGenerator.Word();
       var game = new Game(word);
       var width = Math.Min(81, Console.WindowWidth);
 
