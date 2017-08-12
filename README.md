@@ -1,6 +1,6 @@
 # Hangman
 
-This is a text-based hangman game written in C#. Words are selected at random from a list of over 1500 of the most common English words (see Acknowledgments). The game does not (currently) include an ASCII "hanging man" graphic; instead, the player is granted 15 lives which count down with each incorrect guess. 
+This is a text-based hangman game written in C#. Words are selected at random from a list of over 1500 of the most common English words (see [Acknowledgments](https://github.com/12joan/hangman#acknowledgments)). The game does not (currently) include an ASCII "hanging man" graphic; instead, the player is granted 15 lives which count down with each incorrect guess. 
 
 ## Getting Started
 
