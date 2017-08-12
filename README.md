@@ -44,6 +44,6 @@ This project is licensed under the Unlicence - see the [LICENSE](LICENSE) file f
 
 ## Acknowledgments
 
-* The default list of words comes from an article by [TalkEnglish.com](http://www.talkenglish.com/vocabulary/top-1500-nouns.aspx)
-* The ASCII Art title seen in the game was generated using this [Text to ASCII Art Generator](http://patorjk.com/software/taag/)
+* The default list of words comes from [an article by TalkEnglish.com](http://www.talkenglish.com/vocabulary/top-1500-nouns.aspx).
+* The ASCII Art title seen in the game was generated using this [Text to ASCII Art Generator](http://patorjk.com/software/taag/).
 
